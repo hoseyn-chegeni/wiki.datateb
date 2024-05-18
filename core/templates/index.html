@@ -2,7 +2,7 @@
 
 {% block article_titles%}
 {% for i in articles%}
-<a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">{{i.title}}</a> 
+<a href="{%url 'wiki:detail' i.id %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">{{i.title}}</a> 
 {%endfor%}
 {%endblock%}
 </div>

@@ -1,0 +1,38 @@
+{%extends 'base.html' %}
+{%block article_header%}
+<h1 class="w3-jumbo"><b>{{object.title}}</b></h1>
+<h1 class="w3-xxxlarge w3-text-red"><b>{{object.category}}.</b></h1>
+{%endblock%}
+
+{% block article_titles%}
+{% for i in articles%}
+<a href="{%url 'wiki:detail' i.id %}" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">{{i.title}}</a> 
+{%endfor%}
+{%endblock%}
+
+{%block images%}
+<div class="w3-half">
+    {% if object.image1 %}
+    <img src="{{object.image1.url}}" style="width:100%" onclick="onClick(this)" >
+    <hr>
+{%endif%}
+{% if object.image3%}
+<img src="{{object.image3.url}}" style="width:100%" onclick="onClick(this)" >
+<hr>
+{%endif%}
+  </div>
+
+  <div class="w3-half">
+    {%if object.image2%}
+    <img src="{{object.image2.url}}" style="width:100%" onclick="onClick(this)" >
+    <hr>
+{%endif%}
+{%if object.image4%}
+<img src="{{object.image4.url}}" style="width:100%" onclick="onClick(this)" >
+<hr>
+{%endif%}
+  </div>
+{%endblock%}
+{% block content%}
+<p>{{object.content}}</p>
+{%endblock%}
