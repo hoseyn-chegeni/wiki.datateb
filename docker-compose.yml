@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: wiki
+    build:
+      context: ./core
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - ./core:/usr/src/app
+    ports:
+      - 8001:8001
+
+
+
