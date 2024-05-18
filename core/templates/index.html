@@ -22,12 +22,9 @@ body {font-size:16px;}
     <h3 class="w3-padding-64"><b>سامانه آموزشی<br>دیتاطب</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
-    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a> 
-    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
-    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Designers</a> 
-    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Packages</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+    {% for i in articles%}
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">{{i.title}}</a> 
+    {%endfor%}
   </div>
 </nav>
 
@@ -49,45 +46,7 @@ body {font-size:16px;}
     <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
   </div>
-  
-  <!-- Photo grid (modal) -->
 
-  <!-- Modal for full size images on click-->
-
-  <!-- Services -->
-
-  
-  <!-- Designers -->
-
-  <!-- Packages / Pricing Tables -->
-
-  
-  <!-- Contact -->
-
-
-<!-- End page content -->
 </div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-</script>
-
 </body>
 </html>
