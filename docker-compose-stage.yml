@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  wiki:
+    container_name: wiki
+    build:
+      context: ./core
+    command: gunicorn core.wsgi --bind 0.0.0.0:8000
+    volumes:
+      - ./core:/usr/src/app
+    ports:
+      - 8000:8000
+
+
+
